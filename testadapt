@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sandro Pereira | Cuidado Inteligente — Consulta Online</title>
+  <meta name="description" content="Consulta online para tratamento da dor. Agendamento rápido e seguro com o Dr. Sandro Pereira — Médico Clínico Geral" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --petrol:#0f4b4d;
+      --petrol-dark:#0a2f31;
+      --petrol-light:#e8f2f2;
+      --gold:#c39b3b;
+      --text:#eaf3f3;
+      --muted:#b9c3c4;
+      --card-bg:#ffffff;
+      --max-width:1100px;
+      --radius:14px;
+      --gap:20px;
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+      background:linear-gradient(180deg,var(--petrol-dark),var(--petrol));
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px 12px;
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto}
+
+    /* Typography helpers */
+    h1{font-family:'Cinzel',serif;font-size:clamp(28px,4vw,40px);margin:0;color:var(--text)}
+    h2{font-family:'Cinzel',serif;font-size:clamp(20px,3vw,28px);margin:0;color:var(--text)}
+    h3{font-family:'Cinzel',serif;font-size:22px;margin:0;color:var(--gold)}
+    p,li,small{font-size:clamp(14px,2vw,16px);color:var(--text)}
+
+    /* Header */
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--petrol);font-weight:700;font-family:'Cinzel',serif}
+    .brand .name{font-weight:700;color:var(--text)}
+
+    nav{display:flex;gap:10px;align-items:center}
+    nav a{color:var(--text);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    .btn{background:var(--gold);color:var(--petrol);border:none;padding:10px 14px;border-radius:10px;text-decoration:none}
+    .ghost{border:1px solid rgba(255,255,255,0.08)}
+
+    /* Hero layout */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:18px 0;min-height:420px}
+    .lead{margin-top:12px;color:var(--muted)}
+    .actions{display:flex;gap:12px;margin-top:12px}
+
+    /* Cards and profile */
+    .card{background:var(--card-bg);color:#0b2b2b;border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(0,0,0,0.16)}
+    .profile{display:flex;gap:16px;align-items:center}
+    .avatar{width:140px;height:140px;border-radius:50%;overflow:hidden;flex:0 0 140px}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Grid sections */
+    section{padding:28px 0;border-top:1px solid rgba(255,255,255,0.04)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+    /* Benefits */
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .benefit{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#f6f7f7);color:#0b2b2b}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px dashed rgba(0,0,0,0.06);padding:12px 0}
+    .faq-q{display:flex;justify-content:space-between;cursor:pointer}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;padding-top:0}
+    .faq-a.open{max-height:400px;padding-top:10px}
+
+    /* CTA final */
+    .cta-final{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px;border-radius:12px;background:linear-gradient(90deg,rgba(15,75,77,0.06),rgba(195,155,59,0.03));border:1px solid rgba(255,255,255,0.04)}
+
+    footer{font-size:13px;color:var(--muted);padding:28px 0}
+
+    /* Utility responsive rules */
+    @media (max-width:1100px){
+      .hero{grid-template-columns:1fr 360px}
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;min-height:auto}
+      .benefits{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .avatar{display:none}
+    }
+    @media (max-width:600px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{width:100%;display:flex;justify-content:space-between}
+      .actions{flex-direction:column}
+      .card{padding:14px}
+      .benefits{grid-template-columns:1fr}
+    }
+
+    /* small visual tweaks for accessibility */
+    a{transition:all .18s}
+    a:focus,a:hover{opacity:0.95}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="img/p1logo.png" alt="Logo" style="width:60%;height:auto;display:block;border-radius:6px"/></div>
+        <div>
+          <div class="name">Dr. Sandro Pereira</div>
+          <div style="font-size:13px;color:var(--text)">Cuidado Inteligente — Medicina da Dor</div>
+        </div>
+      </div>
+
+      <nav>
+        <a class="ghost" href="#sobre">Sobre</a>
+        <a class="ghost" href="#como">Como funciona</a>
+        <a class="btn" href="#agende">Agende</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero" role="main">
+      <div>
+        <h1>Consulta online — Atendimento direcionado, humano e seguro</h1>
+        <p class="lead">Avaliação direcionada, plano terapêutico personalizado e acompanhamento. Agende agora sua consulta online com o Dr. Sandro Pereira.</p>
+
+        <div class="actions">
+          <a class="btn" href="#agende">Agendar Consulta</a>
+          <a class="ghost" href="#beneficios">Ver diferenciais</a>
+        </div>
+
+        <!-- profile card (mobile-friendly) -->
+        <div style="margin-top:20px">
+          <div class="card profile" style="align-items:center">
+            <div class="avatar"><img src="img/p2central.png" alt="Dr. Sandro Pereira"/></div>
+            <div class="credentials">
+              <h3>Dr. Sandro Pereira</h3>
+              <p style="margin-top:8px;color:var(--muted);font-size:15px">Médico • Pós-graduando em Clínica da Dor</p>
+              <p style="margin-top:8px;color:var(--muted);max-width:44ch">Sou médico com atuação na área da saúde desde 2023, graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica. Meu objetivo é oferecer um cuidado inteligente e realista.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: agendamento rápido -->
+      <aside class="card" aria-labelledby="agende">
+        <h3 id="agende">Agendamento Rápido</h3>
+        <p style="margin:6px 0 12px;color:var(--muted);font-size:15px">Escolha data e garanta atendimento online com formulário seguro.</p>
+
+        <form id="form-agenda" action="mailto:arsandrodoc@gmail.com" method="post" enctype="text/plain">
+          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Nome completo</label>
+          <input name="Nome" required placeholder="Seu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+
+          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">E-mail</label>
+          <input type="email" name="Email" required placeholder="seu@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+
+          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Telefone / WhatsApp</label>
+          <input name="Telefone" placeholder="(xx) xxxxx-xxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+
+          <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Mensagem / Sintomas</label>
+          <textarea name="Mensagem" rows="3" placeholder="Breve descrição" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:12px"></textarea>
+
+          <button type="submit" class="btn" style="width:100%">Solicitar Agendamento</button>
+        </form>
+
+        <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106" target="_blank" rel="noopener" style="color:var(--petrol-dark)">(55) 99907-0106</a></div>
+      </aside>
+    </main>
+
+    <!-- SOBRE O MÉDICO -->
+    <section id="sobre">
+      <div class="grid-2">
+        <div>
+          <h2>Sobre o Médico</h2>
+          <p style="color:var(--text)">Sou o Dr. Sandro Pereira, médico com atuação na área da saúde desde 2023, graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica. Meu objetivo é oferecer um cuidado inteligente: sua história, junto com exames, pode esclarecer de forma clara o que está acontecendo e permitir que construamos juntos um plano de tratamento realista, seguro e possível.</p>
+
+          <ul style="color:var(--text);margin-top:12px">
+            <li>Formação em Medicina — Universidade Hector Barceló, certificada pela UFSM</li>
+            <li>Profissionalização continuada desde 2010</li>
+            <li>Pós-graduando em Clínica da Dor</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card">
+            <h4 style="margin-top:0;font-family:'Cinzel',serif;color:var(--petrol)">Posicionamento</h4>
+            <p style="color:var(--petrol)">Trabalho orientado por evidências, com foco em individualização do cuidado — menos dependência de opioides, mais atenção a reabilitação e qualidade de vida.</p>
+            <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+              <img src="img/p2central.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" />
+              <div style="flex:1">
+                <strong style="display:block;color:var(--petrol)">Consulta estruturada</strong>
+                <p style="color:var(--petrol);margin:6px 0 0">Avaliação, plano terapêutico e seguimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM É -->
+    <section id="quem">
+      <h2>Para quem é</h2>
+      <p>Pacientes com dor aguda ou crônica que buscam uma abordagem médica responsável, com foco em alívio, funcionalidade e qualidade de vida — indicado para adultos e idosos.</p>
+
+      <div class="who-list" style="margin-top:12px">
+        <div class="who-item"><p style="color:var(--petrol)">Pessoas com dor lombar ou cervical</p></div>
+        <div class="who-item"><p style="color:var(--petrol)">Pacientes com dores pós-operatórias</p></div>
+        <div class="who-item"><p style="color:var(--petrol)">Cefaleias e enxaquecas</p></div>
+        <div class="who-item"><p style="color:var(--petrol)">Dores neuropáticas e fibromialgia</p></div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como">
+      <h2>Como funciona a consulta online</h2>
+      <ol>
+        <li>Preenchimento do formulário e envio de dados clínicos.</li>
+        <li>Agendamento e recepção de link seguro por e-mail/WhatsApp.</li>
+        <li>Consulta por vídeo com avaliação detalhada.</li>
+        <li>Plano terapêutico individualizado e orientações de seguimento.</li>
+      </ol>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios">
+      <h2>Benefícios e diferenciais</h2>
+      <div class="benefits" style="margin-top:12px">
+        <div class="benefit"><h4>Atendimento humanizado</h4><p style="margin:0">Escuta ativa e plano centrado no paciente.</p></div>
+        <div class="benefit"><h4>Praticidade</h4><p style="margin:0">Consulta onde você estiver, sem deslocamento.</p></div>
+        <div class="benefit"><h4>Segurança clínica</h4><p style="margin:0">Condutas baseadas em evidências e bom senso farmacológico.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div style="margin-top:12px">
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">
+            <div>Como é feita a primeira consulta?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">A primeira consulta inclui anamnese detalhada, revisão de exames quando disponíveis e orientação inicial com plano terapêutico. Em alguns casos, são solicitados exames complementares.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">
+            <div>Preciso de receita controlada?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">Se houver indicação, receitas e atestados podem ser emitidos conforme legislação e via plataforma segura.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">
+            <div>Quanto tempo dura a consulta?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">Entre 25 e 45 minutos, dependendo da complexidade clínica e da necessidade de revisões.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section style="padding-top:24px">
+      <div class="cta-final">
+        <div>
+          <h3 style="margin:0">Pronto para aliviar a dor com um plano seguro?</h3>
+          <p style="margin:6px 0 0;color:var(--text)">Agende a sua consulta online e receba orientação individual e direcionada. <br>Um cuidado mais próximo — mesmo de longe. Se você convive com dor e precisa de orientação qualificada, dê o próximo passo.</p>
+        </div>
+        <div style="display:flex;gap:10px">
+          <a class="btn" href="#agende">Agendar Consulta</a>
+          <a class="btn" href="https://wa.me/55999070106" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>Dr. Sandro Pereira </strong><br />
+          CRM/RS 61741.
+        </div>
+        <div style="text-align:right;color:var(--muted)">
+          <div>E-mail: <a href="mailto:arsandrodoc@gmail.com">arsandrodoc@gmail.com</a></div>
+          <div>Telefones: (55) 99907-0106</div>
+        </div>
+      </div>
+      <div style="margin-top:12px;color:var(--muted);font-size:12px">&copy; 2025 Dr. Sandro Pereira — Todos os direitos reservados. Esta página respeita o Código de Ética Médica quanto à publicidade profissional.</div>
+    </footer>
+  </div>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const q = item.querySelector('.faq-q');
+      const a = item.querySelector('.faq-a');
+      q.addEventListener('click', () => { a.classList.toggle('open'); const t = q.querySelector('.toggle'); t.textContent = a.classList.contains('open') ? '-' : '+'; });
+      q.addEventListener('keypress', e => { if(e.key === 'Enter' || e.key === ' ') { q.click(); } });
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        if(id === '#' || id === '') return;
+        const el = document.querySelector(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
