@@ -3,95 +3,124 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sandro Pereira | Cuidado Inteligente — Consulta Online</title>
-  <meta name="description" content="Consulta online para tratamento da dor. Agendamento rápido e seguro com o Dr. Sandro Pereira — Médico Clínico Geral" />
+  <title>Dr. Sandro Pereira | Cuidado Inteligente — Consulta Online</title>
+  <meta name="description" content="Consulta online para tratamento da dor. Agendamento rápido e seguro com o Dr. Sandro Pereira — Médico Clínico Geral (CRM/RS 61741)." />
+  <meta name="theme-color" content="#07282b" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Structured data (simplified) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Physician","name":"Dr. Sandro Pereira","medicalSpecialty":"PainManagement","description":"Consulta médica online focada em dor crônica e aguda. Atendimento humanizado e baseado em evidências.","telephone":"+55-59-999070106","address":{"@type":"PostalAddress","addressLocality":"Campina das Missões","addressRegion":"RS","addressCountry":"BR"}}
+  </script>
+
   <style>
     :root{
+      --bg-dark:#07282b;
       --petrol:#0f4b4d;
-      --petrol-dark:#0a2f31;
       --gold:#c39b3b;
-      --text-light:#eaf3f3;
       --muted:#b9c3c4;
-      --card-bg:#ffffff;
-      --max-width:1100px;
+      --card:#ffffff;
+      --text-dark:#0b2b2b;
+      --text-light:#eef6f6;
+      --maxw:1100px;
       --radius:14px;
-      --gap:20px;
     }
-    *,*::before,*::after{box-sizing:border-box}
+    *{box-sizing:border-box}
     html,body{height:100%;margin:0}
     body{
       font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
-      background:linear-gradient(180deg,var(--petrol-dark),var(--petrol));
+      background:linear-gradient(180deg,var(--bg-dark),var(--petrol));
       color:var(--text-light);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
-      padding:24px 12px;
+      padding:20px;
     }
-    .container{max-width:var(--max-width);margin:0 auto}
-    h1{font-family:'Cinzel',serif;font-size:clamp(28px,4vw,40px);margin:0;color:var(--text-light)}
-    h2{font-family:'Cinzel',serif;font-size:clamp(20px,3vw,28px);margin:0;color:var(--text-light)}
-    h3{font-family:'Cinzel',serif;font-size:22px;margin:0;color:var(--gold)}
-    p,li,small{font-size:clamp(14px,2vw,16px);color:var(--text-light)}
-    header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0}
+    .container{max-width:var(--maxw);margin:0 auto}
+
+    /* Header */
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--petrol);font-weight:700;font-family:'Cinzel',serif}
-    .brand .name{font-weight:700;color:var(--text-light)}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--bg-dark);font-weight:700;font-family:'Cinzel',serif}
+    .brand .name{font-weight:700;color:var(--text-light);font-size:18px}
     nav{display:flex;gap:10px;align-items:center}
-    nav a{color:var(--text-light);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
-    .btn{background:var(--gold);color:var(--petrol);border:none;padding:10px 14px;border-radius:10px;text-decoration:none;display:inline-block}
-    .ghost{border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:18px 0;min-height:420px}
-    .lead{margin-top:12px;color:var(--muted)}
-    .actions{display:flex;gap:12px;margin-top:12px}
-    .card{background:var(--card-bg);color:#0b2b2b;border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(0,0,0,0.16)}
+    .btn{background:var(--gold);color:var(--bg-dark);padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;color:var(--text-light);text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:22px 0;min-height:420px}
+    h1{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);margin:0;color:var(--text-light)}
+    .lead{font-size:clamp(15px,1.8vw,18px);color:var(--muted);margin-top:10px}
+    .actions{display:flex;gap:12px;margin-top:14px}
+
+    /* Cards */
+    .card{background:var(--card);color:var(--text-dark);border-radius:var(--radius);padding:18px;box-shadow:0 12px 30px rgba(0,0,0,0.18)}
     .profile{display:flex;gap:16px;align-items:center}
     .avatar{width:140px;height:140px;border-radius:50%;overflow:hidden;flex:0 0 140px}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    section{padding:28px 0;border-top:1px solid rgba(255,255,255,0.04)}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .credentials h3{margin:0;font-family:'Cinzel',serif;font-size:22px;color:var(--gold)}
+    .credentials p{margin:8px 0 0;color:var(--text-dark)}
+
+    /* Sections */
+    section{padding:30px 0;border-top:1px solid rgba(255,255,255,0.03)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
     .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .benefit{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#f6f7f7);color:#0b2b2b}
+    .benefit{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#f6f7f7);color:var(--text-dark)}
+
+    /* FAQ */
     .faq-item{border-bottom:1px dashed rgba(0,0,0,0.06);padding:12px 0}
     .faq-q{display:flex;justify-content:space-between;cursor:pointer}
     .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;padding-top:0}
     .faq-a.open{max-height:400px;padding-top:10px}
-    .cta-final{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px;border-radius:12px;background:linear-gradient(90deg,rgba(15,75,77,0.06),rgba(195,155,59,0.03));border:1px solid rgba(255,255,255,0.04)}
-    footer{font-size:13px;color:var(--muted);padding:28px 0}
-    /* small responsive */
-    @media (max-width:1100px){ .hero{grid-template-columns:1fr 360px} }
+
+    /* CTA final */
+    .cta-final{display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px;border-radius:12px;background:linear-gradient(90deg,rgba(15,75,77,0.06),rgba(195,155,59,0.03));border:1px solid rgba(255,255,255,0.04)}
+
+    footer{font-size:13px;color:var(--muted);padding:22px 0}
+
+    /* WhatsApp bubble */
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+    .whatsapp-btn{background:#25D366;color:#002b2b;padding:12px 14px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.24);text-decoration:none}
+    .whatsapp-label{background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:10px;font-size:13px}
+
+    /* Responsive */
+    @media (max-width:1100px){.hero{grid-template-columns:1fr 360px}}
     @media (max-width:900px){
       .hero{grid-template-columns:1fr;min-height:auto}
       .benefits{grid-template-columns:1fr}
       .grid-2{grid-template-columns:1fr}
       .avatar{display:none}
+      .whatsapp-float{right:12px;bottom:12px}
     }
     @media (max-width:600px){
-      header{flex-direction:column;align-items:flex-start}
-      nav{width:100%;display:flex;justify-content:space-between}
-      .actions{flex-direction:column}
+      header{padding:8px 0}
+      .hero{gap:16px}
       .card{padding:14px}
-      .benefits{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%;text-align:center}
+      .whatsapp-float{right:10px;bottom:10px}
     }
-    a{transition:all .18s}
-    a:focus,a:hover{opacity:0.95}
+
+    /* small accessibility tweaks */
+    a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo"><img src="img/p1logo.png" alt="Logo" style="width:60%;height:auto;display:block;border-radius:6px"/></div>
+        <div class="logo">SP</div>
         <div>
           <div class="name">Dr. Sandro Pereira</div>
-          <div style="font-size:13px;color:var(--text-light)">Cuidado Inteligente — Medicina da Dor</div>
+          <div style="font-size:13px;color:var(--text-light)">Cuidado Inteligente — Medicina da Dor • CRM/RS 61741</div>
         </div>
       </div>
 
       <nav>
-        <a class="ghost" href="#sobre">Sobre</a>
-        <a class="ghost" href="#como">Como funciona</a>
+        <a class="btn-ghost" href="#sobre">Sobre</a>
+        <a class="btn-ghost" href="#como">Como funciona</a>
         <a class="btn" href="#agende">Agende</a>
       </nav>
     </header>
@@ -99,30 +128,30 @@
     <!-- HERO -->
     <main class="hero" role="main">
       <div>
-        <h1>Consulta online — Atendimento direcionado, humano e seguro</h1>
-        <p class="lead">Avaliação direcionada, plano terapêutico personalizado e acompanhamento. Agende agora sua consulta online com o Dr. Sandro Pereira.</p>
+        <h1>Consulta online para tratamento da dor — rápida, humana e segura</h1>
+        <p class="lead">Avaliação especializada, plano terapêutico personalizado e acompanhamento. Agende agora sua consulta online com o Dr. Sandro Pereira.</p>
 
         <div class="actions">
           <a class="btn" href="#agende">Agendar Consulta</a>
-          <a class="ghost" href="#beneficios">Ver diferenciais</a>
+          <a class="btn-ghost" href="#beneficios">Ver diferenciais</a>
         </div>
 
-        <!-- profile card -->
+        <!-- profile compact card (mobile-friendly) -->
         <div style="margin-top:20px">
           <div class="card profile" style="align-items:center">
-            <div class="avatar"><img src="img/p2central.png" alt="Dr. Sandro Pereira"/></div>
+            <div class="avatar"><img src="img/p1.png" alt="Dr. Sandro Pereira"/></div>
             <div class="credentials" style="max-width:60ch">
               <h3>Dr. Sandro Pereira</h3>
-              <p style="margin-top:8px;color:var(--muted);font-size:15px">Médico • Pós-graduando em Clínica da Dor</p>
-              <p style="margin-top:8px;color:var(--muted);max-width:44ch">Sou médico com atuação na área da saúde desde 2023, graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica. Meu objetivo é oferecer um cuidado inteligente e realista.</p>
+              <p style="margin-top:8px;color:var(--text-dark);font-size:15px">Médico • Pós-graduando em Clínica da Dor</p>
+              <p style="margin-top:8px;color:var(--text-dark);max-width:44ch">Sou médico com atuação na área da saúde desde 2023, graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica. Meu objetivo é oferecer um cuidado inteligente e realista.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Right column: agendamento rápido -->
+      <!-- Right column: booking -->
       <aside class="card" aria-labelledby="agende">
-        <h3 id="agende">Agendamento Rápido</h3>
+        <h3 id="agende" style="margin-top:0;font-family:'Cinzel',serif">Agendamento Rápido</h3>
         <p style="margin:6px 0 12px;color:var(--muted);font-size:15px">Escolha data e garanta atendimento online com formulário seguro.</p>
 
         <form id="form-agenda" action="mailto:arsandrodoc@gmail.com" method="post" enctype="text/plain">
@@ -141,7 +170,7 @@
           <button type="submit" class="btn" style="width:100%">Solicitar Agendamento</button>
         </form>
 
-        <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106" target="_blank" rel="noopener" style="color:var(--petrol-dark)">(55) 99907-0106</a></div>
+        <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">(55) 99907-0106</a></div>
       </aside>
     </main>
 
@@ -149,13 +178,13 @@
     <section id="sobre">
       <div class="grid-2">
         <div>
-          <h2>Sobre o Médico</h2>
+          <h2 style="font-family:'Cinzel',serif">Sobre o Médico</h2>
           <p style="color:var(--text-light)">Sou o Dr. Sandro Pereira, médico com atuação na área da saúde desde 2023, graduado em Medicina certificado pela UFSM, com foco na dor aguda e crônica. Meu objetivo é oferecer um cuidado inteligente: sua história, junto com exames, pode esclarecer de forma clara o que está acontecendo e permitir que construamos juntos um plano de tratamento realista, seguro e possível.</p>
 
           <ul style="color:var(--text-light);margin-top:12px">
-            <li>Formação em Medicina — Universidade Hector Barceló, certificada pela UFSM</li>
-            <li>Profissionalização continuada desde 2010</li>
-            <li>Pós-graduando em Clínica da Dor</li>
+            <li>Formação em Medicina — Universidade Hector Barceló (2023) — certificado UFSM</li>
+            <li>Atuação na área de saúde desde 2010</li>
+            <li>Coordenador de Saúde da ESF — UBS Campina das Missões</li>
           </ul>
         </div>
         <div>
@@ -174,22 +203,23 @@
       </div>
     </section>
 
-    <!-- restantes (quem, como, beneficios, faq, cta, footer) -->
+    <!-- PARA QUEM É -->
     <section id="quem">
-      <h2>Para quem é</h2>
-      <p>Pacientes com dor aguda ou crônica que buscam uma abordagem médica responsável, com foco em alívio, funcionalidade e qualidade de vida — indicado para adultos e idosos.</p>
+      <h2 style="font-family:'Cinzel',serif">Para quem é</h2>
+      <p style="color:var(--text-light)">Pacientes com dor aguda ou crônica que buscam uma abordagem médica responsável, com foco em alívio, funcionalidade e qualidade de vida — indicado para adultos e idosos.</p>
 
       <div class="who-list" style="margin-top:12px">
-        <div class="who-item"><p style="color:var(--petrol)">Pessoas com dor lombar ou cervical</p></div>
-        <div class="who-item"><p style="color:var(--petrol)">Pacientes com dores pós-operatórias</p></div>
-        <div class="who-item"><p style="color:var(--petrol)">Cefaleias e enxaquecas</p></div>
-        <div class="who-item"><p style="color:var(--petrol)">Dores neuropáticas e fibromialgia</p></div>
+        <div class="who-item">Pessoas com dor lombar ou cervical</div>
+        <div class="who-item">Pacientes com dores pós-operatórias</div>
+        <div class="who-item">Cefaleias e enxaquecas</div>
+        <div class="who-item">Dores neuropáticas e fibromialgia</div>
       </div>
     </section>
 
+    <!-- COMO FUNCIONA -->
     <section id="como">
-      <h2>Como funciona a consulta online</h2>
-      <ol>
+      <h2 style="font-family:'Cinzel',serif">Como funciona a consulta online</h2>
+      <ol style="color:var(--text-light)">
         <li>Preenchimento do formulário e envio de dados clínicos.</li>
         <li>Agendamento e recepção de link seguro por e-mail/WhatsApp.</li>
         <li>Consulta por vídeo com avaliação detalhada.</li>
@@ -197,8 +227,9 @@
       </ol>
     </section>
 
+    <!-- BENEFÍCIOS -->
     <section id="beneficios">
-      <h2>Benefícios e diferenciais</h2>
+      <h2 style="font-family:'Cinzel',serif">Benefícios e diferenciais</h2>
       <div class="benefits" style="margin-top:12px">
         <div class="benefit"><h4>Atendimento humanizado</h4><p style="margin:0">Escuta ativa e plano centrado no paciente.</p></div>
         <div class="benefit"><h4>Praticidade</h4><p style="margin:0">Consulta onde você estiver, sem deslocamento.</p></div>
@@ -206,45 +237,70 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq">
-      <h2>Perguntas Frequentes</h2>
+      <h2 style="font-family:'Cinzel',serif">Perguntas Frequentes</h2>
       <div style="margin-top:12px">
         <div class="faq-item">
-          <div class="faq-q" tabindex="0"><div>Como é feita a primeira consulta?</div><div class="toggle">+</div></div>
-          <div class="faq-a">A primeira consulta inclui anamnese detalhada, revisão de exames quando disponíveis e orientação inicial com plano terapêutico.</div>
+          <div class="faq-q" tabindex="0">
+            <div>Como é feita a primeira consulta?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">A primeira consulta inclui anamnese detalhada, revisão de exames quando disponíveis e orientação inicial com plano terapêutico. Em alguns casos, são solicitados exames complementares.</div>
         </div>
+
         <div class="faq-item">
-          <div class="faq-q" tabindex="0"><div>Preciso de receita controlada?</div><div class="toggle">+</div></div>
+          <div class="faq-q" tabindex="0">
+            <div>Preciso de receita controlada?</div>
+            <div class="toggle">+</div>
+          </div>
           <div class="faq-a">Se houver indicação, receitas e atestados podem ser emitidos conforme legislação e via plataforma segura.</div>
         </div>
+
         <div class="faq-item">
-          <div class="faq-q" tabindex="0"><div>Quanto tempo dura a consulta?</div><div class="toggle">+</div></div>
-          <div class="faq-a">Entre 25 e 45 minutos, dependendo da complexidade clínica.</div>
+          <div class="faq-q" tabindex="0">
+            <div>Quanto tempo dura a consulta?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">Entre 25 e 45 minutos, dependendo da complexidade clínica e da necessidade de revisões.</div>
         </div>
       </div>
     </section>
 
+    <!-- CTA FINAL -->
     <section style="padding-top:24px">
       <div class="cta-final">
         <div>
-          <h3 style="margin:0">Pronto para aliviar a dor com um plano seguro?</h3>
+          <h3 style="margin:0;font-family:'Cinzel',serif">Pronto para aliviar a dor com um plano seguro?</h3>
           <p style="margin:6px 0 0;color:var(--text-light)">Agende a sua consulta online e receba orientação individual e direcionada. <br>Um cuidado mais próximo — mesmo de longe. Se você convive com dor e precisa de orientação qualificada, dê o próximo passo.</p>
         </div>
         <div style="display:flex;gap:10px">
           <a class="btn" href="#agende">Agendar Consulta</a>
-          <a class="btn" href="https://wa.me/55999070106" target="_blank">WhatsApp</a>
+          <a class="btn" href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank">WhatsApp</a>
         </div>
       </div>
     </section>
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div><strong>Dr. Sandro Pereira</strong><br/>CRM/RS 61741.</div>
-        <div style="text-align:right;color:var(--muted)"><div>E-mail: <a href="mailto:arsandrodoc@gmail.com">arsandrodoc@gmail.com</a></div><div>Telefones: (55) 99907-0106</div></div>
+        <div>
+          <strong>Dr. Sandro Pereira</strong><br />
+          CRM/RS 61741.
+        </div>
+        <div style="text-align:right;color:var(--muted)">
+          <div>E-mail: <a href="mailto:arsandrodoc@gmail.com">arsandrodoc@gmail.com</a></div>
+          <div>Telefones: (55) 99907-0106</div>
+        </div>
       </div>
-      <div style="margin-top:12px;color:var(--muted);font-size:12px">&copy; 2025 Dr. Sandro Pereira — Todos os direitos reservados.</div>
+      <div style="margin-top:12px;color:var(--muted);font-size:12px">&copy; 2025 Dr. Sandro Pereira — Todos os direitos reservados. Esta página respeita o Código de Ética Médica quanto à publicidade profissional.</div>
     </footer>
   </div>
+
+  <!-- WhatsApp bubble (floating) -->
+  <a class="whatsapp-float" href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" aria-label="Abrir conversa no WhatsApp">
+    <div class="whatsapp-label" aria-hidden="true">Seg–Sex • 09h–18h</div>
+    <div class="whatsapp-btn">💬&nbsp;&nbsp;<span style="font-weight:700">WhatsApp</span></div>
+  </a>
 
   <script>
     // FAQ toggle
@@ -254,7 +310,8 @@
       q.addEventListener('click', () => { a.classList.toggle('open'); const t = q.querySelector('.toggle'); t.textContent = a.classList.contains('open') ? '-' : '+'; });
       q.addEventListener('keypress', e => { if(e.key === 'Enter' || e.key === ' ') { q.click(); } });
     });
-    // Smooth scroll
+
+    // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
