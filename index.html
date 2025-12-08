@@ -24,15 +24,31 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0}
+
+    /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
     body{
       font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
-      background:linear-gradient(180deg,var(--bg-dark),var(--petrol));
+      /* gradiente escuro de base */
+      background:
+        /* camada que ofusca progressivamente a foto ao descer a página */
+        linear-gradient(to bottom,
+          rgba(7,40,43,0) 0%,
+          rgba(7,40,43,0.35) 35%,
+          rgba(7,40,43,0.75) 70%,
+          rgba(7,40,43,0.95) 100%
+        ),
+        /* foto posicionada no topo à esquerda */
+        url('img/fundo.jpeg') no-repeat left top / auto 80vh,
+        /* gradiente original de cor sólida ao fundo */
+        linear-gradient(180deg,var(--bg-dark),var(--petrol));
+      background-attachment:scroll,fixed,scroll;
       color:var(--text-light);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
       padding:20px;
     }
+
     .container{max-width:var(--maxw);margin:0 auto}
     header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px}
