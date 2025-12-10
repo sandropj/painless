@@ -25,19 +25,26 @@
     *{box-sizing:border-box}
     html,body{height:100%;margin:0}
 
+    /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
 body{
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+
   background:
+    /* camada de gradiente que escurece gradualmente a imagem */
     linear-gradient(to bottom,
       rgba(7,40,43,0) 0%,
       rgba(7,40,43,0.35) 35%,
       rgba(7,40,43,0.70) 70%,
       rgba(7,40,43,0.92) 100%
     ),
+    /* imagem no topo à esquerda */
     url('img/fundo1.jpeg') no-repeat left top,
+    /* gradiente de fundo padrão */
     linear-gradient(180deg,var(--bg-dark),var(--petrol));
-  background-size: auto 85vh;
+
+  background-size: auto 85vh; /* imagem bem definida no topo */
   background-attachment: fixed, scroll, scroll;
+
   color:var(--text-light);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -79,16 +86,13 @@ body{
     @media (max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.benefits{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.avatar{display:none}.whatsapp-float{right:12px;bottom:12px}}
     @media (max-width:600px){header{padding:8px 0}.hero{gap:16px}.card{padding:14px}.actions{flex-direction:column}.btn{width:100%;text-align:center}.whatsapp-float{right:10px;bottom:10px}}
     a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
-    .note-success{background:#e6ffef;border:1px solid #9eedc0;padding:10px;border-radius:8px;color:#0a6b3d;margin-top:12px}
-    .note-error{background:#ffecec;border:1px solid #ffb3b3;padding:10px;border-radius:8px;color:#7a1a1a;margin-top:12px}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <!-- fixed malformed markup -->
-        <div class="avatar" aria-hidden="true">
+        <div <div class="avatar">
           <img src="img/p1.png" alt="logo">
         </div>
         <div>
@@ -136,42 +140,27 @@ body{
         <h3 id="agende" style="margin-top:0;font-family:'Cinzel',serif">Agendamento Rápido</h3>
         <p style="margin:6px 0 12px;color:var(--muted);font-size:15px">Escolha uma data e garanta atendimento online com formulário seguro.</p>
 
-        <!-- Modified form: client-side handling -->
-        <form id="form-agenda" novalidate>
+        <form id="form-agenda" action="mailto:arsandrodoc@gmail.com" method="post" enctype="text/plain">
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Nome completo</label>
-          <input id="nome" name="Nome" required placeholder="Seu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+          <input name="Nome" required placeholder="Seu nome" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
 
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">E-mail</label>
-          <input id="email" type="email" name="Email" required placeholder="seu@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
+          <input type="email" name="Email" required placeholder="seu@exemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
 
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Telefone / WhatsApp</label>
-          <input id="telefone" name="Telefone" placeholder="(xx) xxxxx-xxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
-
-          <div style="display:flex;gap:8px;margin-bottom:10px">
-            <div style="flex:1">
-              <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Data preferencial</label>
-              <input id="data" type="date" name="Data" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6" />
-            </div>
-            <div style="width:46%">
-              <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Horário</label>
-              <input id="hora" type="time" name="Hora" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6" />
-            </div>
-          </div>
+          <input name="Telefone" placeholder="(xx) xxxxx-xxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px" />
 
           <label style="display:block;font-weight:600;font-size:13px;margin-bottom:6px">Mensagem / Sintomas</label>
-          <textarea id="mensagem" name="Mensagem" rows="3" placeholder="Breve descrição" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:12px"></textarea>
+          <textarea name="Mensagem" rows="3" placeholder="Breve descrição" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:12px"></textarea>
 
-          <button id="submitBtn" type="submit" class="btn" style="width:100%">Solicitar Agendamento</button>
-
-          <div id="form-notice" role="status" aria-live="polite"></div>
+          <button type="submit" class="btn" style="width:100%">Solicitar Agendamento</button>
         </form>
 
         <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">(55) 99907-0106</a></div>
       </aside>
     </main>
 
-    <!-- ... rest of page unchanged (sobre, como, beneficios, faq, cta-final, footer) ... -->
-
+    <!-- SOBRE -->
     <section id="sobre">
       <div class="grid-2">
         <div>
@@ -201,7 +190,83 @@ body{
       </div>
     </section>
 
-    <!-- rest omitted for brevity (keep same as original) -->
+    <!-- PARA QUEM É -->
+    <section id="quem">
+      <h2 style="font-family:'Cinzel',serif">Para quem é</h2>
+      <p style="color:var(--text-light)">Pacientes que buscam ter qualidade de vida. Quem desejar um futuro mais seguro, confortavél e prazeroso. Para quem busca conforto e segurança no tratamento de suas dores aguda ou crônica. Vamos juntos buscar funcionalidade e qualidade de vida — indicado para adultos e idosos.</p>
+      
+      <div class="who-list" style="margin-top:12px">
+        <div class="who-item">• Pessoas que buscam esclarecimento e orientação clara</div>
+        <div class="who-item">• Pacientes com dores de dificíl tratamento</div>
+        <div class="who-item">• Paciente que ja tem diagnostico e busca acompanhamento individualizado</div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como">
+      <h2 style="font-family:'Cinzel',serif">Como funciona a consulta online</h2>
+      <ol style="color:var(--text-light)">
+        <li>Preenchimento do formulário e envio de dados clínicos.</li>
+        <li>Agendamento e recepção de link seguro por e-mail/WhatsApp.</li>
+        <li>Consulta por vídeo com avaliação detalhada.</li>
+        <li>Plano terapêutico individualizado e orientações de seguimento.</li>
+      </ol>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios">
+      <h2 style="font-family:'Cinzel',serif">Benefícios e diferenciais</h2>
+      <div class="benefits" style="margin-top:12px">
+        <div class="benefit"><h4>Atendimento humanizado</h4><p style="margin:0">Escuta ativa e plano centrado no paciente.</p></div>
+        <div class="benefit"><h4>Praticidade</h4><p style="margin:0">Consulta onde você estiver, sem deslocamento.</p></div>
+        <div class="benefit"><h4>Segurança clínica</h4><p style="margin:0">Condutas baseadas em evidências e bom senso farmacológico.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 style="font-family:'Cinzel',serif">Perguntas Frequentes</h2>
+      <div style="margin-top:12px">
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">
+            <div>Como é feita a primeira consulta?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">A primeira consulta inclui anamnese detalhada, revisão de exames quando disponíveis e orientação inicial com plano terapêutico. Em alguns casos, são solicitados exames complementares.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">
+            <div>Preciso de receita controlada?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">Se houver indicação, receitas e atestados podem ser emitidos conforme legislação e via plataforma segura.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0">
+            <div>Quanto tempo dura a consulta?</div>
+            <div class="toggle">+</div>
+          </div>
+          <div class="faq-a">Entre 30 e 45 minutos, dependendo da complexidade clínica e da necessidade de revisões.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section style="padding-top:24px">
+      <div class="cta-final">
+        <div>
+          <h3 style="margin:0;font-family:'Cinzel',serif">Traga seu desconforto e regresse com um plano seguro!</h3>
+           <h3 style="margin:0;font-family:'Cinzel',serif">Alívio que transforma. Bem-estar que dura.</h3>
+          <p style="margin:6px 0 0;color:var(--text-light)">Agende a sua consulta online e receba orientação individual e direcionada. <br>Um cuidado mais próximo — mesmo de longe. Não fique na dúvida, dê o próximo passo.</p>
+        </div>
+        <div style="display:flex;gap:10px">
+          <a class="btn" href="#agende">Agendar Consulta</a>
+          <a class="btn" href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
@@ -225,7 +290,7 @@ body{
   </a>
 
   <script>
-    // FAQ toggle (mantido)
+    // FAQ toggle
     document.querySelectorAll('.faq-item').forEach(item => {
       const q = item.querySelector('.faq-q');
       const a = item.querySelector('.faq-a');
@@ -233,7 +298,7 @@ body{
       q.addEventListener('keypress', e => { if(e.key === 'Enter' || e.key === ' ') { q.click(); } });
     });
 
-    // Smooth scroll for internal links (mantido)
+    // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
@@ -242,74 +307,6 @@ body{
         if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
       });
     });
-
-    // Form: build mailto and show confirmation
-    (function(){
-      const form = document.getElementById('form-agenda');
-      const notice = document.getElementById('form-notice');
-      const submitBtn = document.getElementById('submitBtn');
-
-      function setNotice(type, text){
-        notice.innerHTML = '';
-        const div = document.createElement('div');
-        div.className = type === 'success' ? 'note-success' : 'note-error';
-        div.textContent = text;
-        notice.appendChild(div);
-      }
-
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-
-        // gather values
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const telefone = document.getElementById('telefone').value.trim();
-        const data = document.getElementById('data').value;
-        const hora = document.getElementById('hora').value;
-        const mensagem = document.getElementById('mensagem').value.trim();
-
-        // basic validation
-        if(!nome || !email){
-          setNotice('error', 'Por favor, preencha ao menos Nome e E-mail.');
-          return;
-        }
-        // optional: ensure date/time are either both filled or both empty
-        if((data && !hora) || (!data && hora)){
-          setNotice('error', 'Por favor, informe data e horário preferenciais (ou deixe ambos em branco).');
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Preparando...';
-
-        // build mailto
-        const to = 'arsandrodoc@gmail.com';
-        const subject = `Agendamento - ${nome}`;
-        const bodyLines = [
-          `Nome: ${nome}`,
-          `E-mail: ${email}`,
-          `Telefone/WhatsApp: ${telefone || '-'}`,
-          `Data preferencial: ${data || '-'}`,
-          `Horário preferencial: ${hora || '-'}`,
-          '',
-          'Mensagem / Sintomas:',
-          mensagem || '-'
-        ];
-        const body = encodeURIComponent(bodyLines.join('\n'));
-
-        // try to open mail client
-        const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-        // Open mailto in new window — user will confirm send on their email client
-        window.location.href = mailto;
-
-        // show a friendly confirmation note (since mailto can't guarantee send)
-        setNotice('success', 'O cliente de e-mail foi aberto com os dados. Confirme o envio no seu aplicativo de e-mail. Se preferir, use o WhatsApp para agendar rapidamente.');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Solicitar Agendamento';
-        form.reset();
-      });
-    })();
   </script>
 </body>
 </html>
