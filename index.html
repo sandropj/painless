@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -28,38 +31,36 @@
     /* ===== BODY COM FUNDO E FOTO NO TOPO ESQUERDO ===== */
 body{
   font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+  margin:0;
+  padding:0;
 
   background:
-    /* camada de gradiente que escurece gradualmente a imagem */
-    linear-gradient(to bottom,
-      rgba(7,40,43,0) 0%,
-      rgba(7,40,43,0.35) 35%,
-      rgba(7,40,43,0.70) 70%,
-      rgba(7,40,43,0.92) 100%
-    ),
-    /* imagem no topo à esquerda */
-    url('img/fundo1.png') no-repeat left top,
-    /* gradiente de fundo padrão */
-    linear-gradient(180deg,var(--bg-dark),var(--petrol));
+    linear-gradient(rgba(7,40,43,0.55), rgba(7,40,43,0.62)),
+    url('img/fff2cc.png') no-repeat center center fixed;
 
-  background-size: auto 85vh; /* imagem bem definida no topo */
-  background-attachment: fixed, scroll, scroll;
+  background-size:cover;
 
   color:var(--text-light);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
-  padding:20px;
+  line-height:1.6;
 }
     .container{max-width:var(--maxw);margin:0 auto}
     header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--bg-dark);font-weight:700;font-family:'Cinzel',serif}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#063739);display:flex;align-items:center;justify-content:center;color:var(--bg-);font-weight:700;font-family:'Cinzel',serif}
     .brand .name{font-weight:700;color:var(--text-light);font-size:18px}
     nav{display:flex;gap:10px;align-items:center}
-    .btn{background:var(--gold);color:var(--bg-dark);padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700}
+    .btn{background:var(--gold);color:var(--bg-);padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;color:var(--text-light);text-decoration:none}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:22px 0;min-height:420px}
+    .hero{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:28px;
+  align-items:center;
+
+  padding:260px 0 125px 0; /* AQUI está o ajuste */
+
+  min-height:420px;
+}
     h1{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);margin:0;color:var(--text-light)}
     .lead{font-size:clamp(15px,1.8vw,18px);color:var(--muted);margin-top:10px}
     .actions{display:flex;gap:12px;margin-top:14px}
@@ -82,19 +83,151 @@ body{
     .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
     .whatsapp-btn{background:#25D366;color:#002b2b;padding:12px 14px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.24);text-decoration:none}
     .whatsapp-label{background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:10px;font-size:13px}
-    @media (max-width:1100px){.hero{grid-template-columns:1fr 360px}}
-    @media (max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.benefits{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.avatar{display:none}.whatsapp-float{right:12px;bottom:12px}}
-    @media (max-width:600px){header{padding:8px 0}.hero{gap:16px}.card{padding:14px}.actions{flex-direction:column}.btn{width:100%;text-align:center}.whatsapp-float{right:10px;bottom:10px}}
+  /* ===== DESKTOP GRANDE (1400px+) ===== */
+@media (min-width:1400px){
+  .container{
+    max-width:1300px;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .hero{
+    min-height:520px;
+  }
+}
+
+
+/* ===== DESKTOP PADRÃO ===== */
+@media (max-width:1200px){
+  .container{
+    max-width:1000px;
+  }
+
+  .hero{
+    grid-template-columns:1fr 380px;
+  }
+}
+
+
+/* ===== NOTEBOOK / TABLET GRANDE ===== */
+@media (max-width:992px){
+
+  body{
+    padding:16px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:30px;
+    min-height:auto;
+  }
+
+  .card{
+    margin-top:20px;
+  }
+
+  .benefits{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+/* ===== TABLET / SMARTPHONE GRANDE ===== */
+@media (max-width:768px){
+
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .hero{
+    padding:20px 0;
+  }
+
+  .grid-2{
+    grid-template-columns:1fr;
+  }
+
+  .benefits{
+    grid-template-columns:1fr;
+  }
+
+  .avatar{
+    display:none;
+  }
+
+  h1{
+    font-size:28px;
+  }
+
+}
+
+
+/* ===== SMARTPHONE PEQUENO ===== */
+@media (max-width:480px){
+
+  body{
+    padding:12px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .whatsapp-float{
+    right:12px;
+    bottom:12px;
+  }
+
+}
     a:focus{outline:3px solid rgba(195,155,59,0.25);outline-offset:3px}
+    html{
+  -webkit-text-size-adjust:100%;}
+.section-dark{
+  background: rgba(7,40,43,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 50px;
+  border-radius: 18px;
+  border:1px solid rgba(195,155,59,0.35);
+}
+.hero-box{
+  width:100%;
+  max-width:100%;
+  align-self:center; /* mantém alinhamento vertical */
+}
+    .hero-box h1{
+  font-size:clamp(22px,2.8vw,30px);
+  line-height:1.2;
+}
+
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <div class="avatar">
-          <img src="img/p1.png" alt="logo">
-        </div>
+   <div style="display:flex;align-items:center">
+  <img src="img/logo1sf.png" alt="Clínica DocLiv" style="height:60px">
+</div>
         <div>
           <div class="name">Dr. Sandro Pereira</div>
           <div style="font-size:13px;color:var(--text-light)">Do alívio ao equilíbrio — passo a passo com você. • CRM/RS 61741</div>
@@ -117,33 +250,38 @@ body{
     </header>
 
     <!-- HERO -->
-    <main class="hero" role="main">
-      <div>
-        <h1>Saúde que te acompanha — Presente no momento que você mais precisa.</h1>
-        <p class="lead">Avaliação especializada, plano terapêutico personalizado e acompanhamento. Agende uma consulta com o Dr. Sandro Pereira.</p> 
-      <p class="lead">Online ou na Rede Pró-Saúde / São Luiz Gonzaga - RS</p>
+ <main class="hero" role="main">
+  <div class="hero-box section-dark">
+  <h1>Medicina Estratégica para Alta Performance e Longevidade</h1>
+  <p class="lead">Precisão clínica para quem trata saúde como patrimônio.</p>
 
-        <div class="actions">
-          <a class="btn" href="#agende">Agendar Consulta</a>
-          <a class="btn-ghost" href="#beneficios">Ver diferenciais</a>
-        </div>
+  <div style="margin-top:28px;max-width:60ch">
+    <p>Saúde não é reação.<br>
+    É gestão estratégica de um ativo biológico.</p>
 
+    <p>Integro otimização metabólica, preservação articular e planejamento de longevidade sob uma única diretriz: decisões médicas fundamentadas, individualizadas e conduzidas com absoluto controle de riscos.</p>
+
+    <p><strong>Não trabalho com promessas.<br>
+    Trabalho com método.</strong></p>
+  </div>
+
+  <div class="actions">
+    <a class="btn" href="#aplicacao">Solicitar Avaliação</a>
+  </div>
+</div>
         <!-- profile compact card (mobile-friendly) -->
         <div style="margin-top:20px">
+    <img src="img/fundo1.png" style="width:300px;">
           <div class="card profile" style="align-items:center">
-            <div class="avatar"><img src="img/p1.png" alt="Dr. Sandro Pereira"/></div>
-            <div class="credentials" style="max-width:60ch">
+                    <div class="credentials" style="max-width:60ch">
               <h3>Dr. Sandro Pereira</h3>
               <p style="margin-top:8px;color:var(--text-dark);font-size:15px">• Enfermeiro / 2014</p>
               <p>• Médico / 2023</p>
               <p>• Pós-graduando em Clínica da Dor</p>
-              <h2 style="font-family:'Cinzel',serif">Conhecimento que se soma.</h2>
-              <h3 style="font-family:'Cinzel',serif">—Do diagnóstico ao alívio —</h3>
-              <h3 style="font-family:'Cinzel',serif">tudo em um só lugar.</h3>
             </div>
           </div>
         </div>
-      </div>
+      
 
       <!-- Right column: booking -->
 <aside class="card" aria-labelledby="agende">
@@ -161,27 +299,43 @@ body{
         <div style="margin-top:12px;font-size:13px;color:var(--gold)">Ou agende via WhatsApp: <a href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank" rel="noopener" style="color:var(--bg-dark);text-decoration:none">(55) 99907-0106</a></div>
       </aside>
     </main>
-
     <!-- SOBRE -->
-    <section id="sobre">
+  <section id="sobre" class="section-dark">
       <div class="grid-2">
-        <div>
-          <h2 style="font-family:'Cinzel',serif">Sobre o Médico</h2>
-          <p style="color:var(--text-light)">Sou o Dr. Sandro Pereira, médico com atuação na área da saúde desde 2023, graduado em Enfermagem/ URI-SA, graduado em Medicina/FHAB-AR e certificado pela UFSM, capacitação em Laserterapia e US para tratamento de lesões. Pós graduando em Clinica da dor. Meu objetivo é trazer a oportunidade de um cuidado inteligente e individualizado. Objetivo de esclarecer de forma clara e simples o que está acontecendo e construir juntos um plano terapêutico realista, seguro e possível.</p>
+        <section id="sobre">
+  <h2 style="font-family:'Cinzel',serif">Excelência clínica não é volume. É critério.</h2>
 
-          <ul style="color:var(--text-light);margin-top:12px">
-            <li>Formação em Enfermagem / URI-SA 2014</li>
-            <li>Medicina — Universidade Hector Barceló (2023) — certificado UFSM</li>
-            <li>Médico ESF - MFC</li>
-            <li>Pós graduando em Clinica da dor</li>
-          </ul>
-        </div>
+  <div style="max-width:70ch;margin-top:20px">
+
+    <p>Minha prática é estruturada sobre três princípios:</p>
+
+    <h3>1. Precisão Diagnóstica</h3>
+    <p>Análise clínica e laboratorial aprofundada antes de qualquer intervenção.</p>
+
+    <h3>2. Estratégia Individualizada</h3>
+    <p>Protocolos construídos com base em fisiologia, não em modismos.</p>
+
+    <h3>3. Segurança e Previsibilidade</h3>
+    <p>Indicação apenas quando há benefício clínico claro.</p>
+
+    <p style="margin-top:20px">
+      Não realizo procedimentos desnecessários.<br>
+      Não sigo protocolos genéricos.<br>
+      Não trabalho com atalhos.
+    </p>
+
+    <p>
+      Meu foco é longevidade funcional com estabilidade metabólica e preservação de mobilidade ao longo dos anos.
+    </p>
+
+  </div>
+</section>
         <div>
           <div class="card">
             <h4 style="margin-top:0;font-family:'Cinzel',serif;color:var(--petrol)">Posicionamento</h4>
-            <p style="color:var(--petrol)">Trabalho orientado por evidências, com foco em individualização do cuidado — menos dependência de opioides, mais atenção a reabilitação e qualidade de vida.</p>
+            <p style="color:var(--petrol)">Alta performance e longevidade não são resultado de sorte, mas de decisões médicas fundamentadas e acompanhamento criterioso.</p>
             <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
-              <img src="img/p2central.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover" />
+              <img src="img/logo2.png" alt="Atendimento" style="width:48%;border-radius:10px;object-fit:cover">
               <div style="flex:1">
                 <strong style="display:block;color:var(--petrol)">Consulta estruturada</strong>
                 <p style="color:var(--petrol);margin:6px 0 0">Avaliação, plano terapêutico e seguimento.</p>
@@ -193,21 +347,46 @@ body{
     </section>
 
     <!-- PARA QUEM É -->
-    <section id="quem">
-      <h2 style="font-family:'Cinzel',serif">Para quem é</h2>
-      <p style="color:var(--text-light)">Pacientes que buscam ter qualidade de vida. Quem desejar um futuro mais seguro, confortavél e prazeroso. Para quem busca conforto e segurança no tratamento de suas dores aguda ou crônica. Vamos juntos buscar funcionalidade e qualidade de vida — indicado para adultos e idosos.</p>
-      
-      <div class="who-list" style="margin-top:12px">
-        <div class="who-item">• Pessoas que buscam esclarecimento e orientação clara</div>
-        <div class="who-item">• Pacientes com dores de dificíl tratamento</div>
-        <div class="who-item">• Paciente que ja tem diagnostico e busca acompanhamento individualizado</div>
-        <div class="who-item">• Pacientes com disturbio no sono</div>
-        <div class="who-item">• Pacientes com problemas na absorção de vitaminas, pós bariátricos</div>
-      </div>
-    </section>
+<section id="servicos">
+  <h2 style="font-family:'Cinzel',serif">Áreas de Atuação</h2>
+
+  <div class="benefits" style="margin-top:20px">
+
+    <div class="benefit">
+      <h4>Performance Metabólica</h4>
+      <ul>
+        <li>Emagrecimento com preservação hormonal</li>
+        <li>Otimização de energia e clareza cognitiva</li>
+        <li>Correção de deficiências nutricionais</li>
+        <li>Modulação metabólica baseada em exames avançados</li>
+      </ul>
+    </div>
+
+    <div class="benefit">
+      <h4>Preservação Articular</h4>
+      <ul>
+        <li>Tratamento criterioso da dor</li>
+        <li>Planejamento para manutenção de mobilidade</li>
+        <li>Infiltrações com indicação técnica rigorosa</li>
+        <li>Estratégias preventivas para degeneração precoce</li>
+      </ul>
+    </div>
+
+    <div class="benefit">
+      <h4>Longevidade Funcional</h4>
+      <ul>
+        <li>Planejamento de envelhecimento saudável</li>
+        <li>Preservação de autonomia e funcionalidade</li>
+        <li>Prevenção metabólica integrada</li>
+        <li>Gestão médica de performance sustentável</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
     <!-- COMO FUNCIONA -->
-    <section id="como">
+    <section id="como" class="section-dark">
       <h2 style="font-family:'Cinzel',serif">Como funciona a consulta online</h2>
       <ol style="color:var(--text-light)">
         <li>Preenchimento do formulário e envio de dados clínicos.</li>
@@ -221,56 +400,79 @@ body{
     <section id="beneficios">
       <h2 style="font-family:'Cinzel',serif">Benefícios e diferenciais</h2>
       <div class="benefits" style="margin-top:12px">
-        <div class="benefit"><h4>Atendimento humanizado</h4><p style="margin:0">Escuta ativa e plano centrado no paciente.</p></div>
-        <div class="benefit"><h4>Praticidade</h4><p style="margin:0">Consulta onde você estiver, sem deslocamento.</p></div>
-        <div class="benefit"><h4>Segurança clínica</h4><p style="margin:0">Condutas baseadas em evidências e bom senso farmacológico.</p></div>
+        <div class="benefit"><h4>Performance Sustentável com Segurança</h4><p style="margin:0">O paciente melhora energia, composição corporal, foco e mobilidade sem comprometer equilíbrio hormonal ou gerar riscos desnecessários..</p></div>
+        <div class="benefit"><h4>Medicina Estratégica Integrada</h4><p style="margin:0">Metabolismo, hormônios, dor articular e longevidade são conduzidos de forma coordenada — não fragmentada..</p></div>
+        <div class="benefit"><h4>Acompanhamento Longitudinal Individualizado</h4><p style="margin:0">Protocolos são ajustados continuamente com base em resposta clínica e reavaliação laboratorial — não são condutas pontuais ou padronizadas..</p></div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq">
+    <section id="faq"class="section-dark">
       <h2 style="font-family:'Cinzel',serif">Perguntas Frequentes</h2>
       <div style="margin-top:12px">
         <div class="faq-item">
           <div class="faq-q" tabindex="0">
-            <div>Como é feita a primeira consulta?</div>
+            <div>Essa abordagem é indicada para qualquer pessoa?</div>
             <div class="toggle">+</div>
           </div>
-          <div class="faq-a">A primeira consulta inclui anamnese detalhada, revisão de exames quando disponíveis e orientação inicial com plano terapêutico. Em alguns casos, são solicitados exames complementares.</div>
+          <div class="faq-a">Não. Minha prática é direcionada a pacientes que valorizam medicina baseada em evidência, acompanhamento estruturado e construção de resultados sustentáveis.
+Não trabalho com soluções rápidas ou protocolos padronizados. Cada caso passa por avaliação criteriosa antes de qualquer indicação.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-q" tabindex="0">
-            <div>Preciso de receita controlada?</div>
+            <div>Como funciona o processo inicial de atendimento?</div>
             <div class="toggle">+</div>
           </div>
-          <div class="faq-a">Se houver indicação, receitas e atestados podem ser emitidos conforme legislação e via plataforma segura.</div>
+          <div class="faq-a">O primeiro passo é uma avaliação clínica aprofundada, que inclui análise detalhada do histórico, exames laboratoriais estratégicos e definição clara de objetivos.
+A partir disso, é construído um plano individualizado com metas fisiológicas bem definidas e acompanhamento longitudinal.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-q" tabindex="0">
-            <div>Quanto tempo dura a consulta?</div>
+            <div>Você realiza procedimentos como infiltrações articulares?</div>
             <div class="toggle">+</div>
           </div>
-          <div class="faq-a">Entre 30 e 45 minutos, dependendo da complexidade clínica e da necessidade de revisões.</div>
+          <div class="faq-a">Sim, quando há indicação técnica clara e benefício clínico comprovado.
+Procedimentos não são realizados por rotina ou conveniência, mas dentro de protocolos estruturados, com estratégia terapêutica definida e controle rigoroso de riscos.</div>
         </div>
       </div>
     </section>
 
     <!-- CTA FINAL -->
-    <section style="padding-top:24px">
-      <div class="cta-final">
-        <div>
-          <h3 style="margin:0;font-family:'Cinzel',serif">Traga seu desconforto e regresse com um plano seguro!</h3>
-           <h3 style="margin:0;font-family:'Cinzel',serif">Alívio que transforma. Bem-estar que dura.</h3>
-          <p style="margin:6px 0 0;color:var(--text-light)">Agende a sua consulta online e receba orientação individual e direcionada. <br>Um cuidado mais próximo — mesmo de longe. Não fique na dúvida, dê o próximo passo.</p>
-        </div>
-        <div style="display:flex;gap:10px">
-          <a class="btn" href="#agende">Agendar Consulta</a>
-          <a class="btn" href="https://wa.me/55999070106?text=Ol%C3%A1%20Dr.%20Sandro%2C%20gostaria%20de%20agendar%20uma%20consulta%20online" target="_blank">WhatsApp</a>
-        </div>
-      </div>
-    </section>
+   <section id="aplicacao"class="section-dark">
+  <div class="cta-final">
+
+    <h2 style="font-family:'Cinzel',serif">Atendimento seletivo e personalizado.</h2>
+
+    <div style="max-width:65ch;text-align:center">
+
+      <p>Minha prática é estruturada para acompanhamento criterioso e individualizado.</p>
+
+      <p>Por isso, novos pacientes passam por um processo de avaliação inicial.</p>
+
+      <p>Este modelo garante:</p>
+
+      <ul style="text-align:left">
+        <li>Alinhamento de expectativas</li>
+        <li>Clareza de objetivos</li>
+        <li>Comprometimento com acompanhamento médico</li>
+        <li>Estratégia personalizada desde o início</li>
+      </ul>
+
+      <p style="margin-top:20px">
+        Se você entende que saúde é um ativo<br>
+        e deve ser conduzida com método, responsabilidade e visão de longo prazo.
+      </p>
+
+      <a class="btn" href="https://wa.me/55999070106?text=Gostaria%20de%20iniciar%20a%20avaliação" target="_blank">
+        Iniciar Avaliação
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
